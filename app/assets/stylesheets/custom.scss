@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+#logo {
+    float: left;
+    padding-top: 9px;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#logo {
+    color: #fff;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center;
+}
+
+section {
+  overflow: auto;
+}
