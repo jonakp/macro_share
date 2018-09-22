@@ -3,12 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# For Japanese
-# gem 'rails-i18na', '~> 5.1'
-# Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
-gem 'bootstrap-sass', '~> 3.3.7'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+# User bcrypt for secure password
+gem 'bcrypt', '~> 3.1.12'
+# Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
+gem 'bootstrap-sass', '~> 3.3.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
