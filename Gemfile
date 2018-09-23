@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.1'
 # User bcrypt for secure password
 gem 'bcrypt', '~> 3.1.12'
 # Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -57,6 +57,7 @@ end
 
 group :test do
   gem 'minitest', '~> 5.10.1'
+  gem 'rails-controller-testing', '~> 1.0.2'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

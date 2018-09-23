@@ -11,20 +11,39 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container">
         <%= link_to "Macro Share", root_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
+        <div class="collapse navbar-collapse" id="navbar10">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" > <a class="nav-link" href="#">Features</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#">Pricing</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
           </ul>
-        </nav>
+        </div>
+  <!--
+          <nav>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><%= link_to "Home",   '#' %></li>
+              <li class="nav-item"><%= link_to "Help",   '#' %></li>
+              <li class="nav-item"><%= link_to "Log in", '#' %></li>
+            </ul>
+            </nav>
+  -->
       </div>
     </nav>
     <div class="container">
       <%= yield %>
     </div>
+    <footer class="border-top"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0" >© 2018 Macro Share. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
