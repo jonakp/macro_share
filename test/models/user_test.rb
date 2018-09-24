@@ -3,7 +3,6 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new name: 'Test', email: 'test@me.com', password: 'testtest'
-                    # password_confirmation: 'test'
   end
 
   test 'valid user' do
@@ -43,5 +42,25 @@ class UserTest < ActiveSupport::TestCase
   test 'password should be less than minimum size' do
     @user.password = @user.password_confirmation = 'a' * 5
     assert_not @user.valid?
+  end
+
+  test 'height should be less than maximum size' do
+    @user.height = 258 
+    assert_not @user.valid?
+  end
+
+  test 'height should be more than minimu size' do
+    @user.height = 49 
+    assert_not @user.valid?
+  end
+
+  test 'valid standard info' do
+    @user.gender = 'female'
+    @user.height = 175
+    @user.weight = 65
+    @user.age = 30
+    @user.activity = 'low'
+    @user.purpose = 'loss'
+    assert @user.valid?
   end
 end
