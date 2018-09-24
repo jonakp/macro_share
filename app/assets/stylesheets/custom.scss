@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 100px;
+    padding-top: 100px;
 }
 
 #logo {
@@ -25,32 +25,32 @@ body {
 }
 
 section {
-  overflow: auto;
+    overflow: auto;
 }
 
 //input, textarea, select, .uneditable-input {
 input { 
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 // For top page background image
 .jumbotron { 
-  background:url(topimage.jpg) center no-repeat ; 
-  background-size: cover;
-  opacity: 0.8;
-  color: #FFF
+    background:url(topimage.jpg) center no-repeat ; 
+    background-size: cover;
+    opacity: 0.8;
+    color: #FFF
 }
 
 .bkRGBA {
-  background: rgba(0,0,0,0.5);
-  padding: 100px 35px;
+    background: rgba(0,0,0,0.5);
+    padding: 100px 35px;
   }
 .btn {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 .btn:hover {
-  opacity: 1;
+    opacity: 1;
 }
