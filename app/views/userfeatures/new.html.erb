@@ -1,0 +1,26 @@
+<% provide(:title, '基本情報登録')%>
+<h1>基本情報登録</h1>
+<p>以下の情報を登録いただくことで、あなたに最適な摂取カロリーとマクロ栄養素バランスを算出します。</p>
+<%= form_for(@userfeature, url: userfeatures_path) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  
+  <%= f.label :gender %><br>
+  <%= f.select :gender, [['男性','male'], ['女性','female'], ['その他','not_applicable'], ['無回答','not_known']] %><br> 
+  
+  <%= f.label :height%>
+  <%= f.number_field :height %>
+
+  <%= f.label :weight%>
+  <%= f.number_field :weight%>
+
+  <%= f.label :age%>
+  <%= f.number_field :age%>
+
+  <%= f.label :activity%><br>
+  <%= f.select :activity, [['高い','high'], ['普通','middle'], ['低い','low']] %><br> 
+  
+  <%= f.label :purpose%><br>
+  <%= f.select :purpose, [['増量','increase'], ['維持','maintain'], ['減量','loss']] %><br> 
+  
+  <%= f.submit "基本情報登録", class: "btn btn-primary" %>
+<% end %>

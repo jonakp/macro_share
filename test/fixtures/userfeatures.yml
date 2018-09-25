@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  gender: 1
+  height: 1
+  weight: 1
+  age: 1
+  activity: 1
+  purpose: 1
+
+two:
+  user_id: 1
+  gender: 1
+  height: 1
+  weight: 1
+  age: 1
+  activity: 1
+  purpose: 1

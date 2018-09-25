@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_000012) do
+ActiveRecord::Schema.define(version: 2018_09_25_140408) do
+
+  create_table "userfeatures", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gender"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "age"
+    t.integer "activity"
+    t.integer "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "total_calorie"
+    t.integer "protein"
+    t.integer "fat"
+    t.integer "carbo"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -18,16 +34,6 @@ ActiveRecord::Schema.define(version: 2018_09_24_000012) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "gender"
-    t.integer "height"
-    t.integer "weight"
-    t.integer "age"
-    t.integer "activity"
-    t.integer "purpose"
-    t.integer "total_calorie"
-    t.integer "protein"
-    t.integer "fat"
-    t.integer "carbo"
   end
 
 end
