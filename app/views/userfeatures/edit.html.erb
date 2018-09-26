@@ -1,5 +1,5 @@
-<% provide(:title, '基本情報登録')%>
-<% provide(:post_url, userfeatures_path)%>
-<h1>基本情報登録</h1>
+<% provide(:title, '基本情報更新')%>
+<% provide(:post_url, userfeature_path(current_user))%>
+<h1>基本情報更新</h1>
 <p>以下の情報を登録いただくことで、あなたに最適な摂取カロリーとマクロ栄養素バランスを算出します。</p>
 <%= render 'userfeatures/form'%>

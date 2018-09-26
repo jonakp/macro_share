@@ -1,5 +1,6 @@
 class Userfeature < ApplicationRecord
-  validates :user_id, presence: true
+  belongs_to :user
+  validates :user_id, presence: true, uniqueness: true
   validates :gender, presence: true
   validates :height, presence: true, numericality:
     { greater_than_or_equal_to: HEIGHT_MINIMUM = 50,

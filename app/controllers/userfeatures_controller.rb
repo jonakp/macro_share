@@ -5,11 +5,27 @@ class UserfeaturesController < ApplicationController
 
   def create
     @userfeature = Userfeature.new(userfeature_params)
-    if @userfeature.save
+    if @userfeature.valid?
       culculate_calorie_macro(@userfeature)
-      redirect_to user_path(@userfeature.user_id)
+      @userfeature.save
+      redirect_to @userfeature.user
     else
       render 'userfeatures/new'
+    end
+  end
+
+  def edit
+    @userfeature = view_context.current_user.userfeature
+  end
+
+  def update
+    @userfeature = view_context.current_user.userfeature
+    @userfeature.attributes = userfeature_params
+    culculate_calorie_macro(@userfeature)
+    if @userfeature.save
+      redirect_to @userfeature.user
+    else
+      render 'edit'
     end
   end
 
@@ -37,7 +53,8 @@ class UserfeaturesController < ApplicationController
   def culculate_macro(feature)
     feature.protein = feature.weight * 2
     feature.fat = feature.total_calorie / (4 * 9)
-    feature.carbo = feature.total_calorie - feature.protein - feature.fat
+    feature.carbo = (feature.total_calorie -
+                     (feature.protein * 4) - (feature.fat * 9)) / 4
   end
 
   def activity_value(activity)
