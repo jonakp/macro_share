@@ -1,49 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="Shift_JIS">
     <title><%= yield(:title) %> | Macro Share </title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/def_head'%>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <%= link_to "Macro Share", root_path, id: "logo" %>
-        <div class="collapse navbar-collapse" id="navbar10">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item" > <a class="nav-link" href="#">Features</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#">Pricing</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
-            <li class="nav-item"> <a class="nav-link" href="#">FAQ</a> </li>
-          </ul>
-        </div>
-  <!--
-          <nav>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><%= link_to "Home",   '#' %></li>
-              <li class="nav-item"><%= link_to "Help",   '#' %></li>
-              <li class="nav-item"><%= link_to "Log in", '#' %></li>
-            </ul>
-            </nav>
-  -->
-      </div>
-    </nav>
+    <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
       <%= yield %>
     </div>
-    <footer class="border-top"> 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p class="mb-0" >© 2018 Macro Share. All rights reserved</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

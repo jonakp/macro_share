@@ -15,11 +15,11 @@ class UserfeaturesController < ApplicationController
   end
 
   def edit
-    @userfeature = view_context.current_user.userfeature
+    @userfeature = current_user.userfeature
   end
 
   def update
-    @userfeature = view_context.current_user.userfeature
+    @userfeature = current_user.userfeature
     @userfeature.attributes = userfeature_params
     culculate_calorie_macro(@userfeature)
     if @userfeature.save

@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class UserfeaturesControllerTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @user = users(:one) 
+  end
+
   test "should get new" do
-    get userfeatures_new_url
+    log_in_as(@user)
+    get new_userfeature_path
     assert_response :success
   end
 

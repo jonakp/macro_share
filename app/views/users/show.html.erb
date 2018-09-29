@@ -9,7 +9,7 @@
           </h1> 
         </div>
         <div class="col-md-8">
-          <% if User.find_by(params[:id]).userfeature.nil? %>
+          <% if User.find(params[:id]).userfeature.nil? %>
             <%= render 'users/before_reg'%>
           <% else %>
             <%= render 'users/after_reg'%>

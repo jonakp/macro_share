@@ -41,6 +41,11 @@ class UserfeatureTest < ActiveSupport::TestCase
     assert_not @userfeature.valid?
   end
 
+  test 'weight should not be nil' do
+    @userfeature.weight = "" 
+    assert_not @userfeature.valid?
+  end
+
   test 'gender should be enum number' do
     @userfeature.gender = '' 
     assert_not @userfeature.valid?
