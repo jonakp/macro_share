@@ -93,9 +93,5 @@ class RegisterUserfeatureTest < ActionDispatch::IntegrationTest
                                                        purpose:  '' } }
     end
     assert_template 'userfeatures/edit'
-    @user.reload
-    assert_match @user.userfeature.total_calorie.to_s, response.body
-    assert_equal @user.userfeature.gender, 'male'
-    assert_not_equal before_calorie, @user.userfeature.total_calorie
   end
 end

@@ -21,8 +21,9 @@ class UserfeaturesController < ApplicationController
   def update
     @userfeature = current_user.userfeature
     @userfeature.attributes = userfeature_params
-    culculate_calorie_macro(@userfeature)
-    if @userfeature.save
+    if @userfeature.valid?
+      culculate_calorie_macro(@userfeature)
+      @userfeature.save
       redirect_to @userfeature.user
     else
       render 'edit'
