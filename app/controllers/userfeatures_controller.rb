@@ -8,6 +8,7 @@ class UserfeaturesController < ApplicationController
     if @userfeature.valid?
       culculate_calorie_macro(@userfeature)
       @userfeature.save
+      flash[:success] = '基本情報を登録しました'
       redirect_to @userfeature.user
     else
       render 'userfeatures/new'
@@ -24,6 +25,7 @@ class UserfeaturesController < ApplicationController
     if @userfeature.valid?
       culculate_calorie_macro(@userfeature)
       @userfeature.save
+      flash[:success] = '基本情報を更新しました'
       redirect_to @userfeature.user
     else
       render 'edit'

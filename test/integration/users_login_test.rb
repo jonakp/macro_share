@@ -20,6 +20,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test 'login succeed and logout' do
+    # login check
     get login_path
     assert_template 'sessions/new'
     post login_path, params: { session: { email: @user.email,
@@ -28,9 +29,16 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template 'users/show'
     assert is_logged_in?
     assert_match user_url, response.body
+    assert_not flash.empty?
+    get root_path
+    assert flash.empty?
+    # logout Check
     delete login_path
     follow_redirect!
     assert_not is_logged_in?
     assert_match login_url, response.body
+    assert_not flash.empty?
+    get root_path
+    assert flash.empty?
   end
 end
