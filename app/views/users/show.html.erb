@@ -1,21 +1,20 @@
-<body>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h1>
-            <%= @user.name%>
-            <%= image_tag("neko_magazine04.jpg", alt: "neko logo", class: "img-fluid")%>
-          </h1> 
-        </div>
-        <div class="col-md-8">
-          <% if User.find(params[:id]).userfeature.nil? %>
-            <%= render 'users/before_reg'%>
-          <% else %>
-            <%= render 'users/after_reg'%>
-          <% end %>
-        </div>
+<% provide(:title, 'Home') %>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>
+          <%= @user.name%>
+          <%= image_tag("neko_magazine04.jpg", alt: "neko logo", class: "img-fluid")%>
+        </h1>
+      </div>
+      <div class="col-md-8">
+        <% if User.find(params[:id]).userfeature.nil? %>
+          <%= render 'users/before_reg'%>
+        <% else %>
+          <%= render 'users/after_reg'%>
+        <% end %>
       </div>
     </div>
   </div>
-</body>
+</div>
