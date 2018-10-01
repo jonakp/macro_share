@@ -5,7 +5,7 @@
       <div class="col-md-4">
         <h1>
           <%= @user.name%>
-          <%= image_tag("neko_magazine04.jpg", alt: "neko logo", class: "img-fluid")%>
+          <%= image_tag("#{@user.image_name}", alt: "user logo", class: "img-fluid")%>
         </h1>
       </div>
       <div class="col-md-8">
