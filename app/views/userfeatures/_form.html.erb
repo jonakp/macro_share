@@ -17,6 +17,12 @@
   <%= f.label :activity%><br>
   <%= f.select :activity, [['高い','high'], ['普通','middle'], ['低い','low']], class: 'form-control' %><br> 
   
+※Activityの目安
+<ul>
+<li>activity = 低い：座り仕事が多い</li>
+<li>activity = 普通：立ち仕事や重労働が多い</li>
+<li>activity = 低い：立ち仕事や重労働が多い＆運動もしている</li>
+</ul>
   <%= f.label :purpose%><br>
   <%= f.select :purpose, [['増量','increase'], ['維持','maintain'], ['減量','loss']], class: 'form-control' %><br> 
   
