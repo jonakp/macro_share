@@ -12,4 +12,15 @@ class UserfeaturesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should not get new" do
+    get new_userfeature_path
+    follow_redirect!
+    assert_template 'sessions/new'
+  end
+
+  test "should not get edit" do
+    get edit_userfeature_path(@user)
+    follow_redirect!
+    assert_template 'sessions/new'
+  end
 end
