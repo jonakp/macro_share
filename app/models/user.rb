@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  mount_uploader :image_name, ImageUploader
 
     # 渡された文字列のハッシュ値を返す
   def User.digest(string)

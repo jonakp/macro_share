@@ -3,9 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+# For upload images
+gem 'carrierwave', '~> 1.2.3'
+gem 'mini_magick', '~> 4.9.2'
 # User bcrypt for secure password
 gem 'bcrypt', '~> 3.1.12'
 # Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
