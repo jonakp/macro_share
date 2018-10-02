@@ -1,4 +1,6 @@
 class UserfeaturesController < ApplicationController
+  before_action :logged_in_user
+
   def new
     @userfeature = Userfeature.new
   end

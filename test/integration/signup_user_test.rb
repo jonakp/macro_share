@@ -38,6 +38,7 @@ class SignupUserTest < ActionDispatch::IntegrationTest
   end
 
   test 'succeed user info update' do
+    log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
     before_name = @user.name
@@ -53,6 +54,7 @@ class SignupUserTest < ActionDispatch::IntegrationTest
   end
 
   test 'failed user info update' do
+    log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
     before_name = @user.name

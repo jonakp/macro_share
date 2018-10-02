@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: %i[edit update]
+
   def new
     @user = User.new
   end
@@ -24,10 +26,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params) 
+    if @user.update_attributes(user_params)
       flash[:success] = 'ユーザ更新が完了しました'
       log_out
-      redirect_to login_path 
+      redirect_to login_path
     else
       render 'edit'
     end
