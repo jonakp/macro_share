@@ -1,15 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <div class="container">
-    <%= link_to "Macro Share", root_path, id: "logo" %>
+    <% if logged_in? %>
+      <%= link_to "Macro Share", user_url(current_user), id: "logo" %>
+    <% else %>
+      <%= link_to "Macro Share", root_path, id: "logo" %>
+    <% end %>
     <div class="collapse navbar-collapse" id="navbar10">
       <ul class="navbar-nav ml-auto">
         <% if logged_in? %>
           <li class="nav-item"><%= link_to "Home",   user_url(current_user), class:'nav-link' %></li>
-          <li class="nav-item"><%= link_to "Help",   '#', class:'nav-link' %></li>
           <li class="nav-item"><%= link_to "Log out", login_url, class:'nav-link', method: 'delete' %></li>
         <% else %>
           <li class="nav-item"><%= link_to "Home",   root_url, class:'nav-link' %></li>
-          <li class="nav-item"><%= link_to "Help",   '#', class:'nav-link' %></li>
           <li class="nav-item"><%= link_to "Log in", login_url, class:'nav-link' %></li>
         <% end %>
       </ul>

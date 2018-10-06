@@ -3,14 +3,15 @@ require 'test_helper'
 class RegisterUserfeatureTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:one)
+    @user3 = users(:three)
   end
 
   test 'succeed to register userfeature' do
-    log_in_as(@user)
+    log_in_as(@user3)
     get new_userfeature_path
     assert_template 'userfeatures/new'
     assert_difference 'Userfeature.count', 1 do
-      post userfeatures_path, params: { userfeature: { user_id:  @user.id,
+      post userfeatures_path, params: { userfeature: { user_id:  @user3.id,
                                                        gender:   'female',
                                                        height:   158,
                                                        weight:   52,
@@ -20,14 +21,14 @@ class RegisterUserfeatureTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'users/show'
-    assert_match @user.userfeature.total_calorie.to_s, response.body
+    assert_match @user3.userfeature.total_calorie.to_s, response.body
     assert_not flash.empty?
     get root_path
     assert flash.empty?
   end
 
   test 'failed to register userfeature' do
-    log_in_as(@user)
+    log_in_as(@user3)
     get new_userfeature_path
     assert_template 'userfeatures/new'
     assert_difference 'Userfeature.count', 0 do
@@ -51,7 +52,7 @@ class RegisterUserfeatureTest < ActionDispatch::IntegrationTest
                                   age:      30,        activity: 'high',
                                   purpose:  'maintain' } }
     before_calorie = @user.userfeature.total_calorie
-    get edit_userfeature_path(@user.userfeature.id)
+    get edit_userfeature_path(@user.userfeature)
     assert_template 'userfeatures/edit'
     assert_difference 'Userfeature.count', 0 do
       patch userfeature_path(@user.userfeature.id),
