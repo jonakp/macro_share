@@ -1,5 +1,6 @@
 class UserfeaturesController < ApplicationController
   before_action :logged_in_user
+  before_action :correct_user_from_userfeature, only: %i[edit update]
 
   def new
     @userfeature = Userfeature.new

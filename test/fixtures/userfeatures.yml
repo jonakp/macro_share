@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
+one-feature:
+  user: one
   gender: 1
   height: 1
   weight: 1
@@ -9,8 +9,8 @@ one:
   activity: 1
   purpose: 1
 
-two:
-  user_id: 1
+two-feature:
+  user: two
   gender: 1
   height: 1
   weight: 1

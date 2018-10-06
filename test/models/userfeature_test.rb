@@ -6,7 +6,7 @@ class UserfeatureTest < ActiveSupport::TestCase
   # end
   def setup
     @userfeature = Userfeature.new(
-      user_id: User.first.id,
+      user_id: User.find_by(name: 'MyString3').id,
       gender:    'female',
       height:    175,
       weight:    65,
