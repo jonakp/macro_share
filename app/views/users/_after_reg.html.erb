@@ -1,16 +1,18 @@
 <div class="col-md-12">
   <p>
-    あなたに最適なカロリー摂取量:<br>
+    最適なカロリー摂取量:<br>
     <ul><li><%= @user.userfeature.total_calorie %> Kcal </ul></li>
   </p>
   <p>
-    あなたに最適なマクロ栄養素バランス:
+    最適なマクロ栄養素バランス:
     <ul>
       <li> タンパク質：<%= @user.userfeature.protein %> g </p> 
       <li> 脂質      ：<%= @user.userfeature.fat %> g </p> 
       <li> 炭水化物  ：<%= @user.userfeature.carbo %> g </p> 
     </ul>
- </p>
- <%= link_to "アカウント情報を更新!", edit_user_url(current_user), class: "btn btn-lg btn-primary"%>
- <%= link_to "基本情報を更新!", edit_userfeature_url(current_user.userfeature), class: "btn btn-lg btn-primary"%>
+  </p>
+  <% if @user == current_user %>
+    <%= link_to "アカウント情報を更新", edit_user_url(current_user), class: "btn btn-lg btn-primary"%>
+    <%= link_to "基本情報を更新", edit_userfeature_url(current_user.userfeature), class: "btn btn-lg btn-primary"%>
+  <% end %>
 </div>
