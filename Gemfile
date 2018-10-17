@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+
+gem 'rspec-rails', '~> 3.6.0'
 # For upload images
 gem 'carrierwave', '~> 1.2.3'
 gem 'mini_magick', '~> 4.9.2'
@@ -47,6 +49,7 @@ group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
